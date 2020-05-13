@@ -90,7 +90,7 @@ GOTO:EOF
 
 :menu_5   Generate keysfalcon *** cmd syntax --- pyemail.bat keyname
 echo *** keysfalcon will be stored in the keysfalcon directory
-python Generatekeysfalcon.py
+python Generatekeys.py
 pause
 copy "pk.txt" "keysfalcon\pk%one%.txt" 
 copy "sk.txt" "keysfalcon\sk%one%.txt" 

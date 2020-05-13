@@ -49,8 +49,17 @@ If you find errors or flaw, I will be very happy if you report them to me at the
 
 MIT
 
- *** cmd syntax *** 
- *** sign.bat (directory path falcoln.py) *** 
- *** for sign.bat edit file and manually enter archive directory path as in example *** 
- *** verify.bat (directory path falcoln.py) *** 
-
+***
+***
+***
+Lonnie Ray McCollister
+***
+https://github.com/lonnieraymccollister/frodo-gpg-transition/
+***
+===>>**First secure data with GPG4win and put in this folder**<<===
+ *** command syntax will look like *** 
+ *** (email.bat/pyemail.bat) keyname filename.gpg *** 
+***
+wikipedia |--->> NTRU was developed in 1996 for lattice-based public-key cryptography (IEEE P1363.1) and in April 2011, NTRUEncrypt was accepted as a X9.98 Standard for use in the financial services industry. The NIST has initiated a quantum-secure cryptographic standardization process and hopes to publish the standardization documents by 2024.  This may become a FIPS or NIST Special Publication.  GPG is a free-software replacement for Symantec's PGP and compliant with RFC 4880. GPG uses a public key infrastructure (PKI)(RSA and ECC are not Quantum resistant.) that vouches for the identities assigned to specific private keys and vulnerabilities are patched or corrected. <<---| FrodoKEM-1344-SHAKE and the falcoln python implimentations worked well using Anaconda3/gpg4win on windows 10.  I combined the two repositories and added a batch file(pyemail.bat) with 3 directories to get the gpg drop-in. To run - go to the the python3 directory in the cmd prompt and run the file(pyemail.bat key_name_reciever(enc/dec) filename key_name_sender(sig)) The cmd menu differs slightly in the tutorial goto https://youtu.be/vxfNoEAakcY  -- I am very pleased with what the Mirosoft - LWEKE team and Thomas Prest team have done.  I recomend using the standard gpg implimentation first to secure your data.
+***
+***
