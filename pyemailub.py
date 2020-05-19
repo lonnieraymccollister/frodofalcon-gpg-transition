@@ -10,7 +10,7 @@ three = sys.argv[3]
 
 def print_menu():       ## Your menu design here
     #clear screen
-    os.system('cls')
+    os.system('clear')
     #menu
     print(30 * "-" , "MENU" , 30 * "-")
     print("1. encrypt *** cmd syntax --- pyemail.bat key_name_receiver filename key_name_sender")
@@ -53,6 +53,7 @@ while loop:          ## While loop which will keep going until loop = False
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(source, destination)
         os.system('python enc.py')
+        pause = (input("hit enter to continue: "))
         symfile = ("gpg --symmetric --cipher-algo AES256 " + two )
         os.system(symfile)
         pause = (input("hit enter to continue: "))
@@ -125,7 +126,7 @@ while loop:          ## While loop which will keep going until loop = False
         filename = (two + ".sig")
         os.remove(filename)
         #clear screen
-        os.system('cls')
+        os.system('clear')
     elif choice==2:
         print("Menu 2 has been selected")
         print("*** copy and enter key from cmd prompt")
@@ -152,7 +153,8 @@ while loop:          ## While loop which will keep going until loop = False
         filenamepk = ("sk" + ".txt")
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(source, destination)
-        os.system('python dec.py')
+        os.system('python Dec.py')
+        pause = (input("hit enter to continue: "))
         symfile = ("gpg -o " + two + " -d " + two + ".gpg")
         os.system(symfile)
         pause = (input("hit enter to continue: "))
@@ -235,10 +237,10 @@ while loop:          ## While loop which will keep going until loop = False
         filename = (two + ".sig")
         os.remove(filename)
         #clear screen
-        os.system('cls')
+        os.system('clear')
     elif choice==3:
         #clear screen
-        os.system('cls')
+        os.system('clear')
         print("Menu 3 has been selected")
         os.system('python keygen.py')
         # copy pk.txt to frodo
@@ -262,10 +264,10 @@ while loop:          ## While loop which will keep going until loop = False
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(destination, source)
         pause = (input("hit enter to continue: "))
-        os.system('cls')
+        os.system('clear')
     elif choice==4:
         #clear screen
-        os.system('cls')
+        os.system('clear')
         print("Menu 4 has been selected")
         os.system('python keygen.py')
         # copy pk.txt to falcon
@@ -289,12 +291,12 @@ while loop:          ## While loop which will keep going until loop = False
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(destination, source)
         pause = (input("hit enter to continue: "))
-        os.system('cls')
+        os.system('clear')
     elif choice==5:
         print("Menu 5 has been selected")
         ## You can add your code or functions here
         loop=False # This will make the while loop to end as not value of loop is set to False
-        os.system('cls')
+        os.system('clear')
     else:
         # Any integer inputs other than values 1-5 we print an error message
         input("Wrong option selection. Enter any key to try again..")
