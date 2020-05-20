@@ -46,7 +46,7 @@ while loop:          ## While loop which will keep going until loop = False
         currentDirectory = os.path.abspath(os.getcwd())
         subdir = ("keysfrodo")
         currentDirectory = (os.path.join(currentDirectory, subdir))
-        filenamepk = ("sk" + one + ".txt")
+        filenamepk = ("pk" + one + ".txt")
         source = (os.path.join(currentDirectory, filenamepk)) 
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("sk" + ".txt")
@@ -173,7 +173,7 @@ while loop:          ## While loop which will keep going until loop = False
         currentDirectory = os.path.abspath(os.getcwd())
         subdir = ("keysfalcon")
         currentDirectory = (os.path.join(currentDirectory, subdir))
-        filenamepk = ("sk" + three + ".txt")
+        filenamepk = ("pk" + three + ".txt")
         source = (os.path.join(currentDirectory, filenamepk)) 
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("sk" + ".txt")
@@ -266,7 +266,7 @@ while loop:          ## While loop which will keep going until loop = False
     elif choice==4:
         #clear screen
         os.system('cls')
-        print("Menu 4 has been selected")
+        print("Menu 3 has been selected")
         os.system('python keygen.py')
         # copy pk.txt to falcon
         currentDirectory = os.path.abspath(os.getcwd())

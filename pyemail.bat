@@ -27,7 +27,7 @@ echo *** copy and enter key from cmd prompt
 del "pk.txt"
 del "sk.txt"
 copy "keysfrodo\pk%one%.txt" "pk.txt"
-copy "keysfrodo\sk%one%.txt" "sk.txt"
+copy "keysfrodo\pk%one%.txt" "sk.txt"
 python enc.py
 gpg --symmetric --cipher-algo AES256 "%two%"
 pause
@@ -59,7 +59,7 @@ pause
 del "pk.txt"
 del "sk.txt"
 copy "keysfalcon\pk%three%.txt" "pk.txt"
-copy "keysfalcon\sk%three%.txt" "sk.txt"
+copy "keysfalcon\pk%three%.txt" "sk.txt"
 python VerifyFile.py "%two%" "%two%.sig" 
 pause
 copy "ct.txt" "Message\ct.txt" 

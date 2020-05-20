@@ -24,9 +24,9 @@ class NISTKAT(object):
         with open('ct.txt', 'wb') as filehandle:
         # store the data as binary data stream
 	        pickle.dump(placesList, filehandle)
-        ss_d = kem.kem_decaps(sk, ct)
-        print("ss =", ss_d.hex().upper())
-        assert ss_e.hex() == ss_d.hex(), "Shared secrets not equal"
+#        ss_d = kem.kem_decaps(sk, ct)
+        print("ss =", ss_e.hex().upper())
+#        assert ss_e.hex() == ss_d.hex(), "Shared secrets not equal"
 
 
     class NISTRNG(object):
