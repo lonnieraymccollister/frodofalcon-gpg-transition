@@ -52,6 +52,7 @@ while loop:          ## While loop which will keep going until loop = False
         filenamepk = ("sk" + ".txt")
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(source, destination)
+        pause = (input("hit enter to continue: "))
         os.system('python enc.py')
         symfile = ("gpg --symmetric --cipher-algo AES256 " + two )
         os.system(symfile)
@@ -152,8 +153,10 @@ while loop:          ## While loop which will keep going until loop = False
         filenamepk = ("sk" + ".txt")
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(source, destination)
+        pause = (input("hit enter to continue: "))
         os.system('python dec.py')
         symfile = ("gpg -o " + two + " -d " + two + ".gpg")
+        pause = (input("hit enter to continue: "))
         os.system(symfile)
         pause = (input("hit enter to continue: "))
         # delete keys
