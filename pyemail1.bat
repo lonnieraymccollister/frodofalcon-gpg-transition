@@ -9,12 +9,10 @@ set two=%2
 echo.%3
 set three=%3
 :menuLOOP
-cls
 echo.
 echo.= Menu =================================================
 echo.
 for /f "tokens=1,2,* delims=_ " %%A in ('"findstr /b /c:":menu_" "%~f0""') do echo.  %%B  %%C
-echo.========================================================
 set choice=
 echo.&set /p choice=Make a choice or hit ENTER to quit: ||GOTO:EOF
 echo.&call:menu_%choice%
@@ -26,20 +24,15 @@ GOTO:menuLOOP
 
 :menu_1   encrypt *** cmd syntax --- pyemail.bat key_name_receiver filename key_name_sender
 echo *** copy and enter key from cmd prompt
-copy "Message\%two%" "%two%"
 del "pk.txt"
 del "sk.txt"
-del "Message\%two%"
 copy "keysfrodo\pk%one%.txt" "pk.txt"
 copy "keysfrodo\pk%one%.txt" "sk.txt"
-python enc1.py > temp.txt
-set /p passphrase= < temp.txt
-REM.-- echo.=%passphrase%
-gpg --yes --batch --passphrase=%passphrase% --symmetric --cipher-algo AES256 "%two%"
-REM.-- pause
+python enc.py
+gpg --symmetric --cipher-algo AES256 "%two%"
+pause
 del "pk.txt"
 del "sk.txt"
-del "temp.txt"
 copy "keysfalcon\pk%three%.txt" "pk.txt"
 copy "keysfalcon\sk%three%.txt" "sk.txt"
 python SignFile.py "%two%" "%two%.sig"
@@ -56,24 +49,15 @@ GOTO:EOF
 
 :menu_2   decrypt *** cmd syntax --- pyemail.bat key_name_receiver filename key_name_sender
 echo *** copy and enter key from cmd prompt
-copy "Message\ct.txt" "ct.txt"
-copy "Message\%two%.gpg" "%two%.gpg"
-copy "Message\%two%.sig" "%two%.sig"
 del "pk.txt"
 del "sk.txt"
-del "Message\ct.txt"
-del "Message\%two%.gpg"
-del "Message\%two%.sig"
 copy "keysfrodo\pk%one%.txt" "pk.txt"
 copy "keysfrodo\sk%one%.txt" "sk.txt"
-python dec1.py > temp.txt
-set /p passphrase= < temp.txt
-REM.-- echo.=%passphrase%
-gpg --yes --batch --passphrase=%passphrase% -o "%two%" -d "%two%.gpg"
-REM.-- pause
+python dec.py
+gpg -o "%two%" -d "%two%.gpg"
+pause
 del "pk.txt"
 del "sk.txt"
-del "temp.txt"
 copy "keysfalcon\pk%three%.txt" "pk.txt"
 copy "keysfalcon\pk%three%.txt" "sk.txt"
 python VerifyFile.py "%two%" "%two%.sig" 
@@ -119,6 +103,8 @@ GOTO:EOF
 
 :menu_T   Tip
 echo.It's easy to add a line separator using one or more fake labels
-pause
+GOTO:EOF
+
+:menu_C   Clear Screen
 cls
 GOTO:EOF
