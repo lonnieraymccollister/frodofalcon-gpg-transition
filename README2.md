@@ -212,7 +212,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 ***
 Lonnie Ray McCollister
 ***
-https://github.com/lonnieraymccollister/frodo-gpg-transition/
+https://github.com/lonnieraymccollister/frodofalcon-gpg-transition/
 ***
 ===>>**First secure data with GPG4win and put in the message folder**<<===
  *** command syntax will look like *** 

@@ -56,7 +56,7 @@ MIT
 ***
 Lonnie Ray McCollister
 ***
-https://github.com/lonnieraymccollister/frodo-gpg-transition/
+https://github.com/lonnieraymccollister/frodofalcon-gpg-transition/
 ***
 ===>>**First secure data with GPG4win and put in the message folder**<<===
  *** command syntax will look like *** 
