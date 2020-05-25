@@ -207,7 +207,6 @@ ACM CCS 2016, 2016. The preprint version is available [`here`](http://eprint.iac
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 
-
 ***
 ***
 ***
@@ -217,9 +216,9 @@ https://github.com/lonnieraymccollister/frodo-gpg-transition/
 ***
 ===>>**First secure data with GPG4win and put in this folder**<<===
  *** command syntax will look like *** 
- *** (email.bat/pyemail.bat) keyname filename.gpg *** 
+ *** (qmail.py) keyname_message_to filename.gpg keyname_message_from *** 
 ***
-wikipedia |--->> NTRU was developed in 1996 for lattice-based public-key cryptography (IEEE P1363.1) and in April 2011, NTRUEncrypt was accepted as a X9.98 Standard for use in the financial services industry. The NIST has initiated a quantum-secure cryptographic standardization process and hopes to publish the standardization documents by 2024.  This may become a FIPS or NIST Special Publication.  GPG is a free-software replacement for Symantec's PGP and compliant with RFC 4880. GPG uses a public key infrastructure (PKI)(RSA and ECC are not Quantum resistant.) that vouches for the identities assigned to specific private keys and vulnerabilities are patched or corrected. <<---| FrodoKEM-1344-SHAKE settings worked well using Anaconda3/gpg4win/gpg in the python3 folder of the repository on windows 10 and ubuntu 20.04 lts.  I  added files(email.bat/pyemail.bat/pyemail.py/pyemailub) and python/windows files with 2 directories to get the gpg drop-in. To run - go to the the python3 directory in the cmd prompt and run either the pyton(qmail.py/pyemail.bat/pyemail.py/pyemailub.py) version. Tutorial(https://youtu.be/cjCJUd3PW1w) (The cmd menu differs slightly in the tutorial for frodo - goto https://youtu.be/vxfNoEAakcY -- I am very pleased with what the Mirosoft - LWEKE team and Thomas Prest team have done.  I recomend using the standard gpg implimentation first to secure your data. qmail.py should work with (windows/ubuntu/MacOs).
+wikipedia |--->> NTRU was developed in 1996 for lattice-based public-key cryptography (IEEE P1363.1) and in April 2011, NTRUEncrypt was accepted as a X9.98 Standard for use in the financial services industry. The NIST has initiated a quantum-secure cryptographic standardization process and hopes to publish the standardization documents by 2024.  This may become a FIPS or NIST Special Publication.  GPG is a free-software replacement for Symantec's PGP and compliant with RFC 4880. GPG uses a public key infrastructure (PKI)(RSA and ECC are not Quantum resistant.) that vouches for the identities assigned to specific private keys and vulnerabilities are patched or corrected. <<---| FrodoKEM-1344-SHAKE settings worked well using Anaconda3/gpg4win/gpg in the python3 folder of the repository on windows 10 and ubuntu 20.04 lts.  I  added files(email.bat/pyemail.bat/pyemail.py/pyemailub) and python/windows files with 2 directories to get the gpg drop-in. To run - go to the the python3 directory in the cmd prompt and run either the pyton(qmail.py/pyemail.bat/pyemail.py/pyemailub.py) version. Tutorial(https://youtu.be/cjCJUd3PW1w) (The cmd menu differs slightly in the tutorial for frodo - goto https://youtu.be/vxfNoEAakcY -- I am very pleased with what the Mirosoft - LWEKE team and Thomas Prest team have done.  I recomend using the standard gpg implimentation first to secure your data. qmail.py should work with (windows/ubuntu/MacOs). Use python pip to install the cryptography module for frodo and any other modules needed.  
 *** 
 ***
 ***
