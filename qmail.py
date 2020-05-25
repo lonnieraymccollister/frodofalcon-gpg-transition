@@ -97,7 +97,7 @@ while loop:          ## While loop which will keep going until loop = False
         # python SignFile with file 
         signfile = ("python SignFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
-        #pause = (input("hit enter to continue: "))
+        pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
@@ -237,10 +237,10 @@ while loop:          ## While loop which will keep going until loop = False
         filenamepk = ("sk" + ".txt")
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(source, destination)
-        # python SignFile with file 
+        # python VerifyFile with file 
         signfile = ("python VerifyFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
-        #pause = (input("hit enter to continue: "))
+        pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
