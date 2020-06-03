@@ -18,14 +18,16 @@ def print_menu():       ## Your menu design here
     print("2. decrypt *** cmd syntax --- python qmail.py key_name_receiver filename key_name_sender")
     print("3. Generate keys frodo *** cmd syntax --- python qmail.bat keyname 1 1 ")
     print("4. Generate keys falcon *** cmd syntax --- python qmail.bat keyname 1 1 ")
-    print("5. Exit")
+    print("5. create otp for dual channel message")
+    print("6. decrypt otp for dual channel message")
+    print("7. Exit")
     print(67 * "-")
   
 loop=True      
   
 while loop:          ## While loop which will keep going until loop = False
     print_menu()    ## Displays menu
-    choice = eval(input("Enter your choice [1-5]: "))
+    choice = eval(input("Enter your choice [1-7]: "))
      
     if choice==1:  
         print("Menu 1 has been selected")
@@ -352,6 +354,128 @@ while loop:          ## While loop which will keep going until loop = False
         print("\033[H\033[J")
     elif choice==5:
         print("Menu 5 has been selected")
+        print("*** OTP Encrypting Message")
+        # copy two from message to current directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ( two )
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two)
+        destination = (os.path.join(currentDirectory, filenamepk))
+        newpath = shutil.copy(source, destination)
+        print (newpath)
+        os.remove(source)
+        #pause = (input("hit enter to continue: "))
+        symfile = ("python xorenc.py " + two + " keyotp.txt " + two + ".otp" )
+        print (symfile)
+        os.system(symfile)
+        #pause = (input("hit enter to continue: "))
+        # copy .otp from to message directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two + ".otp")
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = (two + ".otp")
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination)
+        # copy keyotp.txt to msg directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("keyotp.txt")
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ("keyotp.txt")
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination) 
+        #delete two 
+        filename = (two)
+        os.remove(filename)             
+        #delete .otp
+        os.remove(two + ".otp")
+        #delete keyotp.txt 
+        filename = ("keyotp.txt")
+        os.remove(filename)
+        #pause = (input("hit enter to continue: "))
+        #clear screen
+        print("\033[H\033[J")
+    elif choice==6:
+        print("Menu 6 has been selected")
+        print("*** OTP Decrypting Message")
+        # copy one from message to current directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ( "keyotp.txt" )
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("keyotp.txt" )
+        destination = (os.path.join(currentDirectory, filenamepk))
+        newpath = shutil.copy(source, destination)
+        print (newpath)
+        os.remove(source)
+        # copy two from message to current directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ( two + ".otp" )
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two + ".otp")
+        destination = (os.path.join(currentDirectory, filenamepk))
+        newpath = shutil.copy(source, destination)
+        print (newpath)
+        os.remove(source)
+        #pause = (input("hit enter to continue: "))
+        symfile = ("python xordec.py " + two + ".otp" + " keyotp.txt " + two  )
+        print (symfile)
+        os.system(symfile)
+        #pause = (input("hit enter to continue: "))
+        # copy two to message directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two + ".otp")
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = (two + ".otp")
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination)
+        # copy two from to message directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two)
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = (two)
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination)
+        # copy keyotp.txt to msg directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("keyotp.txt")
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ("keyotp.txt")
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination)    
+        #delete two
+        os.remove(two)         
+        #delete .otp
+        os.remove(two + ".otp")
+        #delete keyotp.txt 
+        filename = ("keyotp.txt")
+        os.remove(filename)
+        #clear screen
+        print("\033[H\033[J")
+    elif choice==7:
+        print("Menu 7 has been selected")
         ## You can add your code or functions here
         loop=False # This will make the while loop to end as not value of loop is set to False
         print("\033[H\033[J")
