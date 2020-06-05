@@ -21,14 +21,17 @@ def print_menu():       ## Your menu design here
     print("5. create otp for dual channel message")
     print("6. decrypt otp for dual channel message")
     print("7. encrypt(CAMELLIA256) *** cmd syntax --- python qmail.py key_name_receiver filename key_name_sender")
-    print("8. Exit")
+    print("8. *** cmd syntax --- change key_name_receiver ")
+    print("9. *** cmd syntax --- change filename ")
+    print("10. *** cmd syntax --- change key_name_sender ")
+    print("11. Exit")
     print(67 * "-")
   
 loop=True      
   
 while loop:          ## While loop which will keep going until loop = False
     print_menu()    ## Displays menu
-    choice = eval(input("Enter your choice [1-8]: "))
+    choice = eval(input("Enter your choice [1-11]: "))
      
     if choice==1:  
         print("Menu 1 has been selected")
@@ -592,9 +595,24 @@ while loop:          ## While loop which will keep going until loop = False
     elif choice==8:
         print("Menu 8 has been selected")
         ## You can add your code or functions here
+        one = (input("Enter key_name_receiver: "))
+        print("\033[H\033[J")
+    elif choice==9:
+        print("Menu 9 has been selected")
+        ## You can add your code or functions here
+        two = (input("Enter filename: "))
+        print("\033[H\033[J")
+    elif choice==10:
+        print("Menu 10 has been selected")
+        ## You can add your code or functions here
+        three = (input("Enter key_name_sender: "))
+        print("\033[H\033[J")
+    elif choice==11:
+        print("Menu 11 has been selected")
+        ## You can add your code or functions here
         loop=False # This will make the while loop to end as not value of loop is set to False
         print("\033[H\033[J")
     else:
         # Any integer inputs other than values 1-5 we print an error message
-        input("Wrong option selection. Enter any key to try again..")
+        input("Enter any key ....")
         
