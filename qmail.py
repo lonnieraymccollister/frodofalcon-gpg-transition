@@ -14,20 +14,21 @@ def print_menu():       ## Your menu design here
     print("\033[H\033[J")
     #menu
     print(30 * "-" , "MENU" , 30 * "-")
-    print("1. encrypt *** cmd syntax --- python qmail.py key_name_receiver filename key_name_sender")
+    print("1. encrypt(AES256) *** cmd syntax --- python qmail.py key_name_receiver filename key_name_sender")
     print("2. decrypt *** cmd syntax --- python qmail.py key_name_receiver filename key_name_sender")
     print("3. Generate keys frodo *** cmd syntax --- python qmail.bat keyname 1 1 ")
     print("4. Generate keys falcon *** cmd syntax --- python qmail.bat keyname 1 1 ")
     print("5. create otp for dual channel message")
     print("6. decrypt otp for dual channel message")
-    print("7. Exit")
+    print("7. encrypt(CAMELLIA256) *** cmd syntax --- python qmail.py key_name_receiver filename key_name_sender")
+    print("8. Exit")
     print(67 * "-")
   
 loop=True      
   
 while loop:          ## While loop which will keep going until loop = False
     print_menu()    ## Displays menu
-    choice = eval(input("Enter your choice [1-7]: "))
+    choice = eval(input("Enter your choice [1-8]: "))
      
     if choice==1:  
         print("Menu 1 has been selected")
@@ -474,8 +475,122 @@ while loop:          ## While loop which will keep going until loop = False
         os.remove(filename)
         #clear screen
         print("\033[H\033[J")
-    elif choice==7:
+    if choice==7:  
         print("Menu 7 has been selected")
+        print("*** Encrypting Message")
+        # copy two from message to current directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ( two )
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two)
+        destination = (os.path.join(currentDirectory, filenamepk))
+        newpath = shutil.copy(source, destination)
+        print (newpath)
+        os.remove(source)
+        # delete keys
+        os.remove("pk.txt")
+        os.remove("sk.txt")
+        # copy pk.txt from frodo
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("keysfrodo")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ("pk" + one + ".txt")
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("pk" + ".txt")
+        destination = (os.path.join(currentDirectory, filenamepk))
+        newpath = shutil.copy(source, destination)
+        # copy sk.txt from frodo
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("keysfrodo")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ("pk" + one + ".txt")
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("sk" + ".txt")
+        destination = (os.path.join(currentDirectory, filenamepk))
+        newpath = shutil.copy(source, destination)
+        #pause = (input("hit enter to continue: "))
+        temp = os.system('python enc1.py')
+        symfile = ("gpg --yes --batch --passphrase=" + str(temp) + " --symmetric --cipher-algo CAMELLIA256 " + two )
+        print (symfile)
+        os.system(symfile)
+        #pause = (input("hit enter to continue: "))
+        # delete keys
+        os.remove("pk.txt")
+        os.remove("sk.txt")
+        # copy pk.txt from falcon
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("keysfalcon")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ("pk" + three + ".txt")
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("pk" + ".txt")
+        destination = (os.path.join(currentDirectory, filenamepk))
+        shutil.copy(source, destination)
+        # copy sk.txt from falcon
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("keysfalcon")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ("sk" + three + ".txt")
+        source = (os.path.join(currentDirectory, filenamepk)) 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("sk" + ".txt")
+        destination = (os.path.join(currentDirectory, filenamepk))
+        shutil.copy(source, destination)
+        # python SignFile with file 
+        signfile = ("python SignFile.py " + two + " " + two + ".sig" )
+        os.system( signfile )
+        pause = (input("hit enter to continue: "))
+        # copy ct to msg directory 
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = ("ct" + ".txt")
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = ("ct" + ".txt")
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination)
+        # copy gpg to msg directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two + ".gpg")
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = (two + ".gpg")
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination)        
+        # copy sig to msg directory
+        currentDirectory = os.path.abspath(os.getcwd())
+        filenamepk = (two + ".sig")
+        source = (os.path.join(currentDirectory, filenamepk))
+        currentDirectory = os.path.abspath(os.getcwd())
+        subdir = ("MESSAGE")
+        currentDirectory = (os.path.join(currentDirectory, subdir))
+        filenamepk = (two + ".sig")
+        destination = (os.path.join(currentDirectory, filenamepk)) 
+        shutil.copy(source, destination)        
+        #delete ct
+        os.remove("ct.txt")
+        #delete two 
+        filename = (two)
+        os.remove(filename)
+        #delete two + .gpg
+        filename = (two + ".gpg")
+        os.remove(filename)
+        #delete two + .sig
+        filename = (two + ".sig")
+        os.remove(filename)
+        #clear screen
+        print("\033[H\033[J")
+    elif choice==8:
+        print("Menu 8 has been selected")
         ## You can add your code or functions here
         loop=False # This will make the while loop to end as not value of loop is set to False
         print("\033[H\033[J")
