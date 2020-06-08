@@ -518,7 +518,7 @@ while loop:          ## While loop which will keep going until loop = False
         # python SignFile with file 
         signfile = ("python SignFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
-        pause = (input("hit enter to continue: "))
+        #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
         #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
@@ -624,7 +624,7 @@ while loop:          ## While loop which will keep going until loop = False
         symfile = ("gpg --yes --batch --passphrase=" + str(temp) + " --symmetric --cipher-algo AES256 " + two )
         print (symfile)
         os.system(symfile)
-        #pause = (input("hit enter to continue: "))
+        pause = (input("hit enter to continue: "))
         # delete keys
         os.remove("pk.txt")
         os.remove("sk.txt")
@@ -651,7 +651,7 @@ while loop:          ## While loop which will keep going until loop = False
         # python SignFile with file 
         signfile = ("python SignFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
-        pause = (input("hit enter to continue: "))
+        #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
         #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
@@ -840,7 +840,7 @@ while loop:          ## While loop which will keep going until loop = False
         # python VerifyFile with file 
         signfile = ("python VerifyFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
-        pause = (input("hit enter to continue: "))
+        #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
         #currentDirectory = os.path.abspath(os.getcwd())
         #filenamepk = ("ct" + ".txt")
@@ -1010,7 +1010,7 @@ while loop:          ## While loop which will keep going until loop = False
         # python VerifyFile with file 
         signfile = ("python VerifyFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
-        pause = (input("hit enter to continue: "))
+        #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
         #currentDirectory = os.path.abspath(os.getcwd())
         #filenamepk = ("ct" + ".txt")
@@ -1391,7 +1391,7 @@ while loop:          ## While loop which will keep going until loop = False
         # python SignFile with file 
         signfile = ("python SignFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
-        pause = (input("hit enter to continue: "))
+        #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
         #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
