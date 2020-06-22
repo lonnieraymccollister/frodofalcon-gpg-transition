@@ -98,36 +98,12 @@ def EncryptAES256():
         signfile = ("python SignFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
-        # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
+        # copy ct to msg directory  
         filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
         # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk1 = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk1))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk1 = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk1)) 
-        #shutil.copy(source, destination)        
+        filenamepk1 = (two + ".gpg")        
         # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk2 = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk2))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk2 = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk2)) 
-        #shutil.copy(source, destination) 
+        filenamepk2 = (two + ".sig") 
         #create zipfile
         # create a ZipFile object
         zipObj = ZipFile(two + ".zip", "w")
@@ -171,7 +147,6 @@ def EncryptCAMELLIA256():
         three = e2.get()
         #clear screen
         print("\033[H\033[J")
-
         print("Menu 7 has been selected")
         print("*** Encrypting Message")
         # copy two from message to current directory
@@ -243,35 +218,11 @@ def EncryptCAMELLIA256():
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
         # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk1 = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk1))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk1 = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk1)) 
-        #shutil.copy(source, destination)        
+        filenamepk1 = (two + ".gpg")        
         # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk2 = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk2))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk2 = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk2)) 
-        #shutil.copy(source, destination) 
         #create zipfile
         # create a ZipFile object
         zipObj = ZipFile(two + ".zip", "w")
@@ -314,7 +265,6 @@ def Decrypt():
         three = e2.get()
         #clear screen
         print("\033[H\033[J")
-
         print("Menu 2 has been selected")
         # copy two + .zip from message to current directory
         currentDirectory = os.path.abspath(os.getcwd())
@@ -433,16 +383,6 @@ def Decrypt():
         signfile = ("python VerifyFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
-        # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
         # copy two to msg directory
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = (two)
@@ -453,26 +393,6 @@ def Decrypt():
         filenamepk = (two)
         destination = (os.path.join(currentDirectory, filenamepk)) 
         shutil.copy(source, destination)        
-        # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)        
-        # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)  
         #delete ct
         os.remove("ct.txt")
         #delete two 
@@ -683,35 +603,11 @@ def OTPEncryptAES256():
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
+        filenamepk = ("ct" + ".txt") 
         # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk1 = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk1))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk1 = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk1)) 
-        #shutil.copy(source, destination)        
+        filenamepk1 = (two + ".gpg")        
         # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk2 = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk2))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk2 = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk2)) 
-        #shutil.copy(source, destination) 
         #create zipfile
         # create a ZipFile object
         zipObj = ZipFile(two + ".zip", "w")
@@ -816,35 +712,11 @@ def OTPEncryptAES256():
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
         # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk1 = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk1))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk1 = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk1)) 
-        #shutil.copy(source, destination)        
+        filenamepk1 = (two + ".gpg")         
         # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk2 = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk2))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk2 = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk2)) 
-        #shutil.copy(source, destination) 
+        filenamepk2 = (two + ".sig") 
         #create zipfile
         # create a ZipFile object
         zipObj = ZipFile(two + ".zip", "w")
@@ -1011,35 +883,11 @@ def OTPEncryptCAMELLIA256():
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
         # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk1 = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk1))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk1 = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk1)) 
-        #shutil.copy(source, destination)        
+        filenamepk1 = (two + ".gpg")        
         # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk2 = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk2))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk2 = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk2)) 
-        #shutil.copy(source, destination) 
+        filenamepk2 = (two + ".sig") 
         #create zipfile
         # create a ZipFile object
         zipObj = ZipFile(two + ".zip", "w")
@@ -1144,35 +992,11 @@ def OTPEncryptCAMELLIA256():
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
         # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
         # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk1 = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk1))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk1 = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk1)) 
-        #shutil.copy(source, destination)        
+        filenamepk1 = (two + ".gpg")        
         # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        filenamepk2 = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk2))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk2 = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk2)) 
-        #shutil.copy(source, destination) 
+        filenamepk2 = (two + ".sig") 
         #create zipfile
         # create a ZipFile object
         zipObj = ZipFile(two + ".zip", "w")
@@ -1218,10 +1042,8 @@ def OTPDecrypt():
         three = e2.get()
         #clear screen
         print("\033[H\033[J")
-
         print("Menu 6 has been selected")
         print("*** OTP Decrypting Message")
-
         twootp = two
         # copy two + .zip from message to current directory
         currentDirectory = os.path.abspath(os.getcwd())
@@ -1340,17 +1162,6 @@ def OTPDecrypt():
         signfile = ("python VerifyFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
-        # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
-        # copy two to msg directory
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = (two)
         source = (os.path.join(currentDirectory, filenamepk))
@@ -1359,27 +1170,7 @@ def OTPDecrypt():
         currentDirectory = (os.path.join(currentDirectory, subdir))
         filenamepk = (two)
         destination = (os.path.join(currentDirectory, filenamepk)) 
-        shutil.copy(source, destination)        
-        # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)        
-        # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)  
+        shutil.copy(source, destination)          
         #delete ct
         os.remove("ct.txt")
         #delete two 
@@ -1391,7 +1182,6 @@ def OTPDecrypt():
         #delete two + .sig
         filename = (two + ".sig")
         os.remove(filename)
-
         two = "keyotp.txt"
         # copy two + .zip from message to current directory
         currentDirectory = os.path.abspath(os.getcwd())
@@ -1510,17 +1300,6 @@ def OTPDecrypt():
         signfile = ("python VerifyFile.py " + two + " " + two + ".sig" )
         os.system( signfile )
         #pause = (input("hit enter to continue: "))
-        # copy ct to msg directory 
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = ("ct" + ".txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("ct" + ".txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
-        # copy two to msg directory
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = (two)
         source = (os.path.join(currentDirectory, filenamepk))
@@ -1529,27 +1308,7 @@ def OTPDecrypt():
         currentDirectory = (os.path.join(currentDirectory, subdir))
         filenamepk = (two)
         destination = (os.path.join(currentDirectory, filenamepk)) 
-        shutil.copy(source, destination)        
-        # copy gpg to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = (two + ".gpg")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = (two + ".gpg")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)        
-        # copy sig to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = (two + ".sig")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = (two + ".sig")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)  
+        shutil.copy(source, destination)          
         #delete ct
         os.remove("ct.txt")
         #delete two 
@@ -1561,7 +1320,6 @@ def OTPDecrypt():
         #delete two + .sig
         filename = (two + ".sig")
         os.remove(filename)
-
         two = twootp#[:-4]
         # copy one from message to current directory
         currentDirectory = os.path.abspath(os.getcwd())
@@ -1591,17 +1349,6 @@ def OTPDecrypt():
         symfile = ("python xordec.py " + two + ".otp" + " keyotp.txt " + twootp[:-4]  )
         print (symfile)
         os.system(symfile)
-        #pause = (input("hit enter to continue: "))
-        # copy two to message directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = (two + ".otp")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = (two + ".otp")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination)
         # copy two from to message directory
         currentDirectory = os.path.abspath(os.getcwd())
         filenamepk = (twootp[:-4])
@@ -1612,16 +1359,6 @@ def OTPDecrypt():
         filenamepk = (twootp[:-4])
         destination = (os.path.join(currentDirectory, filenamepk)) 
         shutil.copy(source, destination)
-        # copy keyotp.txt to msg directory
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #filenamepk = ("keyotp.txt")
-        #source = (os.path.join(currentDirectory, filenamepk))
-        #currentDirectory = os.path.abspath(os.getcwd())
-        #subdir = ("MESSAGE")
-        #currentDirectory = (os.path.join(currentDirectory, subdir))
-        #filenamepk = ("keyotp.txt")
-        #destination = (os.path.join(currentDirectory, filenamepk)) 
-        #shutil.copy(source, destination) 
         #delete twootp[:-4]
         os.remove(twootp[:-4])           
         #delete two
