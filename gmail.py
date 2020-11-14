@@ -5,7 +5,7 @@ import sys
 
 import tkinter as tk
 root = tk.Tk()
-root.title("===> Qmail <===")
+root.title("===> Qmail Frodo/Falcoln<===")
 
 e = tk.Entry(root, width=40, fg="blue", bg="yellow", borderwidth=13)
 #e.pack()
@@ -138,6 +138,7 @@ def EncryptAES256():
         #delete two + .zip
         filename = (two + ".zip")
         os.remove(filename)
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #clear screen
         #print("\033[H\033[J")
     
@@ -257,6 +258,7 @@ def EncryptCAMELLIA256():
         #delete two + .zip
         filename = (two + ".zip")
         os.remove(filename)
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #clear screen
         #print("\033[H\033[J")
 
@@ -405,6 +407,7 @@ def Decrypt():
         #delete two + .sig
         filename = (two + ".sig")
         os.remove(filename)
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #clear screen
         #print("\033[H\033[J")
 
@@ -438,6 +441,7 @@ def KeyGenFrodo():
         filenamepk = ("sk" + ".txt")
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(destination, source)
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #pause = (input("hit enter to continue: "))
         #print("\033[H\033[J")
 
@@ -473,6 +477,7 @@ def KeyGenFalcon():
         filenamepk = ("sk" + ".txt")
         destination = (os.path.join(currentDirectory, filenamepk))
         shutil.copy(destination, source)
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #pause = (input("hit enter to continue: "))
         #print("\033[H\033[J")
 
@@ -751,7 +756,7 @@ def OTPEncryptAES256():
         #delete two + .zip
         filename = (two + ".zip")
         os.remove(filename)
-
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #pause = (input("hit enter to continue: "))
         #clear screen
         #print("\033[H\033[J")
@@ -1031,7 +1036,7 @@ def OTPEncryptCAMELLIA256():
         #delete two + .zip
         filename = (two + ".zip")
         os.remove(filename)
-
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #pause = (input("hit enter to continue: "))
         #clear screen
         print("\033[H\033[J")
@@ -1369,6 +1374,7 @@ def OTPDecrypt():
         #delete keyotp.txt 
         filename = ("keyotp.txt")
         os.remove(filename)
+        os.execl(sys.executable, sys.executable, *sys.argv)
         #clear screen
         #print("\033[H\033[J")
 
